@@ -1,0 +1,46 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}The Movitz run-time environment}{1}{section.2}
+\contentsline {subsection}{\numberline {2.1}Run-time context}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Primitive functions}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Global constants}{2}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Dynamic environment}{2}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Multiple run-time contexts}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Function objects}{3}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Local functions}{4}{subsubsection.2.3.1}
+\contentsline {subsection}{\numberline {2.4}Function-call protocol}{5}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Non-linear encoding of \textsc {\textbf {ecx}}}{5}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Optimized function-calls}{7}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Function result protocol}{8}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Dynamic typing}{9}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Memory management}{10}{subsection.2.7}
+\contentsline {subsubsection}{\numberline {2.7.1}Dynamic memory allocation}{10}{subsubsection.2.7.1}
+\contentsline {section}{\numberline {3}The compiler}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Movitz images}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Compiler internals}{11}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}The compiler protocol}{11}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}The core compiler}{13}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}The compiler's first pass}{13}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}The compiler's second pass}{14}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Special forms}{14}{subsubsection.3.2.5}
+\contentsline {subsection}{\numberline {3.3}The file compiler and the boot process}{15}{subsection.3.3}
+\contentsline {section}{\numberline {4}Libraries}{15}{section.4}
+\contentsline {subsection}{\numberline {4.1}The Common Lisp library}{15}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Numbers}{16}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Sequences}{16}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Eval}{16}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}CLOS}{16}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}File-system related functions}{17}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}Conditions}{17}{subsubsection.4.1.6}
+\contentsline {subsubsection}{\numberline {4.1.7}Reader}{17}{subsubsection.4.1.7}
+\contentsline {subsection}{\numberline {4.2}CLOS details}{17}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Method dispatch}{17}{subsubsection.4.2.1}
+\contentsline {subsection}{\numberline {4.3}Miscellaneous libraries}{18}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Read-line}{18}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}IPv6 networking}{18}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}IPv4 networking}{18}{subsubsection.4.3.3}
+\contentsline {subsection}{\numberline {4.4}x86 CPU library}{18}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}x86 PC drivers library}{19}{subsection.4.5}
+\contentsline {section}{\numberline {5}Debugging and monitoring tools}{19}{section.5}
+\contentsline {subsection}{\numberline {5.1}Image browser}{19}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Bochs emulator interface}{19}{subsection.5.2}
+\contentsline {section}{\numberline {6}Summary}{19}{section.6}

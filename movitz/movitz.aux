@@ -1,0 +1,172 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}The Movitz run-time environment}{1}{section.2}}
+\newlabel{sec:run-time}{{2}{1}{The Movitz run-time environment}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Run-time context}{2}{subsection.2.1}}
+\newlabel{sec:exec}{{2.1}{2}{Run-time context}{subsection.2.1}{}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Primitive functions}{2}{subsubsection.2.1.1}}
+\@writefile{sym}{\indexentry{car|hyperpage}{2}}
+\@writefile{sym}{\indexentry{car|hyperpage}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Global constants}{2}{subsubsection.2.1.2}}
+\@writefile{sym}{\indexentry{t|hyperpage}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Dynamic environment}{2}{subsubsection.2.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Multiple run-time contexts}{3}{subsection.2.2}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Function objects}{3}{subsection.2.3}}
+\newlabel{sec:funobj}{{2.3}{3}{Function objects}{subsection.2.3}{}}
+\@writefile{sym}{\indexentry{unsigned-byte|hyperpage}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Local functions}{4}{subsubsection.2.3.1}}
+\newlabel{sec:local-functions}{{2.3.1}{4}{Local functions}{subsubsection.2.3.1}{}}
+\@writefile{sym}{\indexentry{lambda|hyperpage}{4}}
+\@writefile{sym}{\indexentry{flet|hyperpage}{4}}
+\@writefile{sym}{\indexentry{labels|hyperpage}{4}}
+\@writefile{sym}{\indexentry{function|hyperpage}{4}}
+\@writefile{sym}{\indexentry{dynamic-extent|hyperpage}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Function-call protocol}{5}{subsection.2.4}}
+\newlabel{sec:funcall}{{2.4}{5}{Function-call protocol}{subsection.2.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Register usage during function calls.}}{5}{table.1}}
+\newlabel{tab:funcall-regs}{{1}{5}{Register usage during function calls}{table.1}{}}
+\@writefile{sym}{\indexentry{\&edx|hyperpage}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Non-linear encoding of \textsc  {\textbf  {ecx}}}{5}{subsubsection.2.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A map of the stack, including $f$ and $g$'s stack-frames, after $f$ has called $g$ with the $n$ arguments $a_0$ -- $a_{n-1}$. $\textsc  {\textbf  {eip}}_f$ denotes the return-address, whereas $\textsc  {\textbf  {ebp}}_{\delimiter "3222378 }$ denotes the stack-frame pointer of the function that called $f$.}}{6}{figure.1}}
+\newlabel{fig:funcall-stack}{{1}{6}{A map of the stack, including $f$ and $g$'s stack-frames, after $f$ has called $g$ with the $n$ arguments $a_0$ -- $a_{n-1}$. $\reg {eip}_f$ denotes the return-address, whereas $\reg {ebp}_{\uparrow }$ denotes the stack-frame pointer of the function that called $f$}{figure.1}{}}
+\@writefile{sym}{\indexentry{call-arguments-limit|hyperpage}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The non-linear encoding of argument-count $n$ in \textsc  {\textbf  {ecx}}.}}{6}{figure.2}}
+\newlabel{fig:argcount}{{2}{6}{The non-linear encoding of argument-count $n$ in \reg {ecx}}{figure.2}{}}
+\@writefile{sym}{\indexentry{\&rest|hyperpage}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Optimized function-calls}{7}{subsubsection.2.4.2}}
+\newlabel{sec:funcall-opt}{{2.4.2}{7}{Optimized function-calls}{subsubsection.2.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The combinations of lambda-lists and call-counts that are currently being automatically optimized by the compiler. NB:\ After a compiler re-write, the lambda-lists involving \texttt  {\&optional} are no longer actually optimized. These optimizations will hopefully be added again later.}}{7}{table.2}}
+\newlabel{tab:funcall-opt}{{2}{7}{The combinations of lambda-lists and call-counts that are currently being automatically optimized by the compiler. NB:\^^MAfter a compiler re-write, the lambda-lists involving \texttt {\&optional} are no longer actually optimized. These optimizations will hopefully be added again later}{table.2}{}}
+\@writefile{sym}{\indexentry{numargs-case|hyperpage}{7}}
+\@writefile{sym}{\indexentry{numargs-case|hyperpage}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces An example use of \clsym {numargs-case} taken from the implementation of the \clsym {find-if} function. Here, the entry-point for two arguments may skip all keyword parsing, and assume the default values for the keyword arguments when performing the search.}}{8}{figure.3}}
+\@writefile{sym}{\indexentry{numargs-case|hyperpage}{8}}
+\@writefile{sym}{\indexentry{find-if|hyperpage}{8}}
+\newlabel{fig:numargs-case}{{3}{8}{An example use of \clsym {numargs-case} taken from the implementation of the \clsym {find-if} function. Here, the entry-point for two arguments may skip all keyword parsing, and assume the default values for the keyword arguments when performing the search}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The function-call trampoline stub function for functions that don't implement the two-arguments optimized protocol. This code is located in the file \texttt  {losp/cl/run-time.lisp}.}}{8}{figure.4}}
+\newlabel{fig:tramp-two}{{4}{8}{The function-call trampoline stub function for functions that don't implement the two-arguments optimized protocol. This code is located in the file \texttt {losp/cl/run-time.lisp}}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Function result protocol}{8}{subsection.2.5}}
+\newlabel{sec:fun-result}{{2.5}{8}{Function result protocol}{subsection.2.5}{}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{8}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{8}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Register and carry-flag usage in the function result protocol for returning the $n$ values $v_0$ to $v_{n-1}$. The offset of the ``values'' section of the run-time-context is denoted by $z$.}}{9}{table.3}}
+\newlabel{tab:function-result}{{3}{9}{Register and carry-flag usage in the function result protocol for returning the $n$ values $v_0$ to $v_{n-1}$. The offset of the ``values'' section of the run-time-context is denoted by $z$}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Dynamic typing}{9}{subsection.2.6}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Type tags.}}{9}{table.4}}
+\newlabel{tab:tags}{{4}{9}{Type tags}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Memory management}{10}{subsection.2.7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.7.1}Dynamic memory allocation}{10}{subsubsection.2.7.1}}
+\newlabel{sec:gc}{{2.7.1}{10}{Dynamic memory allocation}{subsubsection.2.7.1}{}}
+\@writefile{sym}{\indexentry{room|hyperpage}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The compiler}{10}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Movitz images}{10}{subsection.3.1}}
+\newlabel{sec:images}{{3.1}{10}{Movitz images}{subsection.3.1}{}}
+\@writefile{sym}{\indexentry{*image*|hyperpage}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Compiler internals}{11}{subsection.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}The compiler protocol}{11}{subsubsection.3.2.1}}
+\newlabel{sec:compiler-protocol}{{3.2.1}{11}{The compiler protocol}{subsubsection.3.2.1}{}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{12}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}The core compiler}{13}{subsubsection.3.2.2}}
+\@writefile{sym}{\indexentry{compile-form|hyperpage}{13}}
+\@writefile{sym}{\indexentry{compile-form-unprotected|hyperpage}{13}}
+\@writefile{sym}{\indexentry{compile-form|hyperpage}{13}}
+\@writefile{sym}{\indexentry{compile-form-unprotected|hyperpage}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}The compiler's first pass}{13}{subsubsection.3.2.3}}
+\newlabel{item:comp-init}{{1}{13}{The compiler's first pass}{Item.1}{}}
+\@writefile{sym}{\indexentry{make-function-arguments-init|hyperpage}{13}}
+\newlabel{item:comp-body}{{2}{13}{The compiler's first pass}{Item.2}{}}
+\@writefile{sym}{\indexentry{compile-form|hyperpage}{13}}
+\@writefile{sym}{\indexentry{lambda|hyperpage}{13}}
+\@writefile{sym}{\indexentry{flet|hyperpage}{13}}
+\@writefile{sym}{\indexentry{labels|hyperpage}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}The compiler's second pass}{14}{subsubsection.3.2.4}}
+\newlabel{item:comp-analyze}{{2}{14}{The compiler's second pass}{Item.4}{}}
+\@writefile{sym}{\indexentry{funobj-assign-bindings|hyperpage}{14}}
+\@writefile{sym}{\indexentry{code-constants-and-jumpers|hyperpage}{14}}
+\@writefile{sym}{\indexentry{finalize-funobj|hyperpage}{14}}
+\newlabel{item:comp-resolve}{{4}{14}{The compiler's second pass}{Item.9}{}}
+\@writefile{sym}{\indexentry{finalize-code|hyperpage}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.5}Special forms}{14}{subsubsection.3.2.5}}
+\newlabel{sec:special-forms}{{3.2.5}{14}{Special forms}{subsubsection.3.2.5}{}}
+\@writefile{sym}{\indexentry{define-special-operator|hyperpage}{14}}
+\@writefile{sym}{\indexentry{define-compiler|hyperpage}{14}}
+\@writefile{sym}{\indexentry{define-compiler|hyperpage}{14}}
+\@writefile{sym}{\indexentry{with-inline-assembly|hyperpage}{15}}
+\@writefile{sym}{\indexentry{with-inline-assembly|hyperpage}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The file compiler and the boot process}{15}{subsection.3.3}}
+\newlabel{sec:file-compiler}{{3.3}{15}{The file compiler and the boot process}{subsection.3.3}{}}
+\@writefile{sym}{\indexentry{compile-file|hyperpage}{15}}
+\@writefile{sym}{\indexentry{require|hyperpage}{15}}
+\@writefile{sym}{\indexentry{provide|hyperpage}{15}}
+\@writefile{sym}{\indexentry{toplevel-function|hyperpage}{15}}
+\@writefile{sym}{\indexentry{provide|hyperpage}{15}}
+\@writefile{sym}{\indexentry{toplevel-function|hyperpage}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Libraries}{15}{section.4}}
+\newlabel{sec:libs}{{4}{15}{Libraries}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The Common Lisp library}{15}{subsection.4.1}}
+\newlabel{sec:cl-libs}{{4.1}{15}{The Common Lisp library}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Numbers}{16}{subsubsection.4.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Sequences}{16}{subsubsection.4.1.2}}
+\@writefile{sym}{\indexentry{from-end|hyperpage}{16}}
+\@writefile{sym}{\indexentry{from-end|hyperpage}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Eval}{16}{subsubsection.4.1.3}}
+\@writefile{sym}{\indexentry{eval|hyperpage}{16}}
+\@writefile{sym}{\indexentry{setf|hyperpage}{16}}
+\@writefile{sym}{\indexentry{eval|hyperpage}{16}}
+\@writefile{sym}{\indexentry{eval|hyperpage}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}CLOS}{16}{subsubsection.4.1.4}}
+\@writefile{sym}{\indexentry{defclass|hyperpage}{16}}
+\@writefile{sym}{\indexentry{defgeneric|hyperpage}{16}}
+\@writefile{sym}{\indexentry{defmethod|hyperpage}{16}}
+\@writefile{sym}{\indexentry{setf|hyperpage}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5}File-system related functions}{17}{subsubsection.4.1.5}}
+\@writefile{sym}{\indexentry{open|hyperpage}{17}}
+\@writefile{sym}{\indexentry{close|hyperpage}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.6}Conditions}{17}{subsubsection.4.1.6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.7}Reader}{17}{subsubsection.4.1.7}}
+\@writefile{sym}{\indexentry{*read-table*|hyperpage}{17}}
+\@writefile{sym}{\indexentry{*read-base*|hyperpage}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}CLOS details}{17}{subsection.4.2}}
+\newlabel{sec:clos-details}{{4.2}{17}{CLOS details}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Method dispatch}{17}{subsubsection.4.2.1}}
+\@writefile{sym}{\indexentry{set-funcallable-instance-function|hyperpage}{17}}
+\@writefile{sym}{\indexentry{initial-discriminating-function|hyperpage}{17}}
+\@writefile{sym}{\indexentry{initial-discriminating-function|hyperpage}{17}}
+\@writefile{sym}{\indexentry{class-of|hyperpage}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Miscellaneous libraries}{18}{subsection.4.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Read-line}{18}{subsubsection.4.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}IPv6 networking}{18}{subsubsection.4.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}IPv4 networking}{18}{subsubsection.4.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}x86 CPU library}{18}{subsection.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}x86 PC drivers library}{19}{subsection.4.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Debugging and monitoring tools}{19}{section.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Image browser}{19}{subsection.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Bochs emulator interface}{19}{subsection.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Summary}{19}{section.6}}
+\newlabel{sec:summary}{{6}{19}{Summary}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A screen-shot of the Movitz image browser tool. The root object to the left is the global ``run-time-context'', a.k.a\ the \clsym {nil} object.}}{20}{figure.5}}
+\@writefile{sym}{\indexentry{nil|hyperpage}{20}}
+\newlabel{fig:browser}{{5}{20}{A screen-shot of the Movitz image browser tool. The root object to the left is the global ``run-time-context'', a.k.a\ the \clsym {nil} object}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A screen-shot of Bochs running Movitz.}}{21}{figure.6}}
+\newlabel{fig:screenshot}{{6}{21}{A screen-shot of Bochs running Movitz}{figure.6}{}}

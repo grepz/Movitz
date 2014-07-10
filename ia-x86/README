@@ -1,0 +1,151 @@
+######################################################################
+## 
+##    Copyright (C) 2003, 2005, 
+##    Department of Computer Science, University of Tromso, Norway.
+## 
+##    For distribution policy, see the accompanying file COPYING.
+## 
+## Filename:      README
+## Description:   Describes the ia-x86 package.
+## Author:        Frode Vatvedt Fjeld <frodef@acm.org>
+## Created at:    Sat Jan 29 16:48:42 2005
+##                
+## $Id: README,v 1.5 2005/01/31 22:58:48 ffjeld Exp $
+##                
+######################################################################
+
+
+			  The ia-x86 package
+
+The ia-x86 package implements assembler and disassembler functionality
+for 16 and 32-bit x86 code. It is primarily intended as a backend for
+the Movitz compiler. The following documents the most interesting API
+operators for this package.
+
+A few terms requires explanation. A "program" is a representation of
+an assembly program that is reasonably convenient to work with for
+humans. This is a list, whose elements are either a symbol that
+represents a label, or a list that represents an instruction.  The
+format of these instructions is something like (:movl :eax (:ebx 1)),
+which means "move EAX to the memory location pointed to by EBX offset
+by 1" (more on this syntax below). However, instructions are also
+represented internally ia-x86 by instances of the various subclasses
+of the "instruction" standard-class, and lists of such objects are
+referred to as "proglists".
+
+
+			       Assembly
+
+The function read-proglist reads a program into proglist form, which
+is typically the first step in producing machine code. This function
+(and its helper functions, in read.lisp) defines the human-readable
+syntax for assembly programs. This is an example program (or rather, a
+lisp function that produces an assembly program):
+
+  (defun mkasm16-bios-print ()
+    "Print something to the terminal.  [es:si] points to the text"
+    `((:movzxb (:si) :cx)
+      (:incw :si)
+      (:movb #xe :ah)
+      (:movw 7 :bx)
+     print-loop
+      (:lodsb)
+      (:int #x10)
+      (:loop 'print-loop)
+      (:ret)))
+
+I personally tend to use keywords for instruction names, although the
+instructions are recognized by name rather than identity, so any
+package will do. Labels, however, are recognized by identity. Label
+references are on the form (quote <label>), so that the loop
+instruction above will transfer control to the print-loop label two
+instructions before it. Indirect memory references are writen by
+placing the pointer inside parens, such as in the first movzxb above.
+If the first element of an instructon is a list (rather than an
+instruction name), this is interpreted as a list of instruction
+prefixes (such as REP, LOCK, etc.).
+
+This is a more-or-less exact description of the syntax:
+
+---------------------------------------------------------
+
+       program ::= (<sexpr>*)
+
+         sexpr ::= ( <expr> ) | <label> | (% <inline-data> %) | (:include . <program>)
+          expr ::= <instro> | ( { <prefix> } ) <instro>
+        instro ::= <instruction> { <operand> }
+
+       operand ::= <concrete> | <abstract>
+
+      concrete ::= <immediate> | <register> | <indirect>
+     immediate ::= <number>
+      register ::= eax | ecx | ...
+      indirect ::= ( iexpr )
+         iexpr ::=   <address>
+                   | (quote <label>)
+                   | <segment> <address> 
+                   | pc+ <offset>
+                   | pc  <address>
+                   | { (quote <label>) } <offset> <scaled-register> <register>
+     scaled-register ::= <register> | ( <register> <scale> )
+               scale ::= 1 | 2 | 4 | 8
+             address ::= <number>
+              offset ::= <signed-number>
+
+      abstract ::= (quote <absexpr>)
+       absexpr ::= <label> | <number> | append-prg
+    append-prg ::= program
+
+        prefix ::= <segment-override> | (:size <size>)
+
+---------------------------------------------------------
+
+One of the original intentions of having proglists as the intermediate
+representation of assembly programs, was to facilitate computational
+reasoning about the program (hence the class hierarchy rooted at
+"instruction").  I don't really know how well this idea worked out, I
+suspect most people will just pass the proglists directly to
+proglist-encode.
+
+
+The function proglist-encode takes a proglist and produces
+machine-code in the form of e.g. a vector of 8-bit bytes. A typical
+usage would be this:
+
+  (proglist-encode :octet-vector :16-bit #x7c00
+                   (read-proglist (mkasm16-bios-print)))
+
+The first agument, :octet-vector, requests that the result be in the
+form of a vector of octets. The second argument says to prodce machine
+code for the 16-bit mode of x86. Next is the address to assume the
+code is located in memory (if the program is position-independent,
+just pass zero). Finally, there is the proglist to be encoded to
+machine code. Additionally, the keyword argument :symtab-lookup can
+provide a function that proglist-encode will use to map (otherwise
+undefined) labels to integers: The function should expect one symbol
+argument and return a suitable integer. The primary return value is
+the byte vector, while the secondary return value is an (assoc)
+symbol-table:
+
+  IA-X86(7): (proglist-encode :octet-vector :16-bit #x7c00
+                              (read-proglist (mkasm16-bios-print)))
+  => #(#xf #xb6 #xc #x46 #xb4 #xe #xbb #x7 #x0 #xac ...)
+  => ((PRINT-LOOP . #x7c09))
+
+
+Another operator that can be useful for interactive and experimental
+use, is the macro "asm" which encodes a single instruction. This can
+be used e.g. to verify syntax or the encoded size of an instruction:
+
+  IA-X86(8): (asm :movl :eax (:ebx 1))
+  => #c(#x894301 #x3)
+
+The return value is a complex, whose real component is the
+(big-endian) binary encoding of the instruction, and the imaginary
+component is the number of bytes.
+
+
+
+			     Disassembly
+
+[To be written.]
